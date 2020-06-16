@@ -16,6 +16,7 @@ variable "vpc_id" {
 }
 variable "revoke" {
   default = false
+  description = " Instruct Terraform to revoke all of the Security Groups attached ingress and egress rules before deleting the rule itself "
 }
 variable "tags" {
   description = "tags to assign to security group"
