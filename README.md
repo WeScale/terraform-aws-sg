@@ -21,7 +21,6 @@ module "sg-wsc" {
 
     }
   ]
-
   egress_rules = [
           {
       from_port   = 22
