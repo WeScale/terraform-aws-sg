@@ -6,7 +6,7 @@ module "sg" {
   source         = "mehdi-wsc/sg-wsc/aws"
   version        = "0.0.1"
   name           = "firsttest"
-  vpc_id         = "vpc-06733116ce9a073c7" 
+  vpc_id         = "vpc-06733116ce9a073c7"
   sg_description = " test "
   ingress_rules = [
     {
@@ -15,7 +15,7 @@ module "sg" {
       protocol    = "tcp"
       cidr_blocks = "0.0.0.0/0"
 
-    },   
+    },
     {
       from_port   = 80
       to_port     = 80
@@ -50,12 +50,12 @@ data "aws_ami" "wp" {
 
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.wp.id
-  instance_type = "t2.micro"
-  security_groups = ["${module.sg.sg_id}"]
-  subnet_id = "subnet-0e4f937c40f6ed4a5"
+  ami                         = data.aws_ami.wp.id
+  instance_type               = "t2.micro"
+  security_groups             = ["${module.sg.sg_id}"]
+  subnet_id                   = "subnet-0e4f937c40f6ed4a5"
   associate_public_ip_address = true
-  user_data = <<-EOF
+  user_data                   = <<-EOF
               #!/bin/bash
               echo "Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &

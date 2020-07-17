@@ -9,7 +9,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
-func TestIntegrationAsg(t *testing.T) {
+func TestIntegrationsg(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../example",
 	}

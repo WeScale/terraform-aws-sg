@@ -1,10 +1,10 @@
 
 resource "aws_security_group" "sg" {
-  name        = var.name
-  description = var.sg_description
-  vpc_id      = var.vpc_id
+  name                   = var.name
+  description            = var.sg_description
+  vpc_id                 = var.vpc_id
   revoke_rules_on_delete = var.revoke
-  tags = var.tags
+  tags                   = var.tags
 }
 resource "aws_security_group_rule" "ingress" {
   count             = var.create ? length(var.ingress_rules) : 0
