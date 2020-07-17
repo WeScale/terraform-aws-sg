@@ -5,7 +5,7 @@ provider "aws" {
 module "sg" {
   source         = "mehdi-wsc/sg-wsc/aws"
   version        = "0.0.1"
-  name           = "firsttest"
+  name           = "test"
   vpc_id         = "vpc-06733116ce9a073c7"
   sg_description = " test "
   ingress_rules = [

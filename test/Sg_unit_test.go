@@ -11,7 +11,6 @@ func TestUnitsg(t *testing.T) {
 	t.Parallel()
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../example",
-		VarFiles:     []string{"variables.tfvars"},
 	}
 
 	defer terraform.Destroy(t, terraformOptions)
