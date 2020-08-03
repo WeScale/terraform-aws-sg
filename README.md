@@ -8,8 +8,6 @@
 
 
 module "sg-wsc" {
-  source  = "mehdi-wsc/sg-wsc/aws"
-  version = "0.0.1"
   name = "sg_test"
   ingress_rules = [
     {
